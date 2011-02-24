@@ -57,6 +57,7 @@ function updateTask() {
         $.each(data.t.tasks, function (i, val) {
           if (
             val.completed == false &&
+            val.name.length > 0 &&
             (
               count == 'all' ||
               ( count == 'today' && val.task_date == today_ymd ) ||
@@ -96,6 +97,7 @@ function updateTask() {
             
             if (
               val.completed == false &&
+              val.name.length > 0 &&
               (
                 count == 'all' ||
                 ( count == 'today' && val.task_date == today_ymd ) ||
