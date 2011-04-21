@@ -16,12 +16,14 @@ chrome.browserAction.onClicked.addListener(function(tab){
   }
   if (display == 'window') {
     window.open(url, '', 'width=' + width + ',height=' + height + ',left=100,top=100');
+  } else if (display == 'tab') {
+    chrome.tabs.create({url: url});
   }
 });
 
 var display = localStorage.getItem('org.7kai.chrome.tasks.display') || DISPLAY_DEFAULT;
 
-if (display != 'window') {
+if (display == 'pop_up') {
   chrome.browserAction.setPopup({'popup': 'popup.html'});
 }
 

@@ -44,10 +44,10 @@ function saveOptions() {
   localStorage.setItem('org.7kai.chrome.tasks.interval_sec', interval_sec);
   localStorage.setItem('org.7kai.chrome.tasks.apps_url', apps_url);
   
-  if (display == 'window') {
-    chrome.browserAction.setPopup({"popup": ""});
-  } else {
+  if (display == 'pop_up') {
     chrome.browserAction.setPopup({"popup": "popup.html"});
+  } else {
+    chrome.browserAction.setPopup({"popup": ""});
   }
   
   updateTask();
@@ -94,6 +94,7 @@ h3 {
 <div style="margin-top: 20px; padding-left: 20px;">
 <h2>Display</h2>
 <div><label><input type="radio" name="display" value="window" /> window</label></div>
+<div><label><input type="radio" name="display" value="tab" /> tab</label></div>
 <div><label><input type="radio" name="display" value="pop_up" /> pop up</label></div>
 <div>width: <input type="text" name="width" value="" size="4" /></div>
 <div>height: <input type="text" name="height" value="" size="4" /></div>
