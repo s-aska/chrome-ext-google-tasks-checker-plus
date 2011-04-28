@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="jquery-1.5.2.min.js"></script>
 <script type="text/javascript" src="main.js"></script>
 <script>
 
@@ -7,12 +7,17 @@ chrome.browserAction.onClicked.addListener(function(tab){
   var display      = localStorage.getItem('org.7kai.chrome.tasks.display')      || DISPLAY_DEFAULT;
   var width        = localStorage.getItem('org.7kai.chrome.tasks.width')        || WIDTH_DEFAULT;
   var height       = localStorage.getItem('org.7kai.chrome.tasks.height')       || HEIGHT_DEFAULT;
+  var view         = localStorage.getItem('org.7kai.chrome.tasks.view')         || VIEW_DEFAULT;
   var count        = localStorage.getItem('org.7kai.chrome.tasks.count')        || COUNT_DEFAULT;
   var interval_sec = localStorage.getItem('org.7kai.chrome.tasks.interval_sec') || INTERVAL_DEFAULT;
   var apps_url     = localStorage.getItem('org.7kai.chrome.tasks.apps_url')     || APPS_URL_DEFAULT;
-  var url          = URL_DEFAULT;
+  var d_list       = localStorage.getItem('org.7kai.chrome.tasks.d_list')       || 0;
+  var url          = URL_DEFAULT + view;
   if (apps_url.length > 0) {
-    url = 'http://mail.google.com/tasks/a/' + apps_url + '/ig';
+    url = 'http://mail.google.com/tasks/a/' + apps_url + '/' + view;
+  }
+  if (d_list != 0) {
+    url = url + '?listid=' + d_list;
   }
   if (display == 'window') {
     window.open(url, '', 'width=' + width + ',height=' + height + ',left=100,top=100');

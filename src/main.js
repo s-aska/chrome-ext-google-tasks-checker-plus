@@ -8,8 +8,9 @@ var COUNT_DEFAULT      = 'all';
 var LISTS_DEFAULT      = 'all';
 var INTERVAL_DEFAULT   = 60;
 var APPS_URL_DEFAULT   = '';
-var URL_DEFAULT        = 'https://mail.google.com/tasks/ig';
+var URL_DEFAULT        = 'https://mail.google.com/tasks/';
 var CANVUS_URL_DEFAULT = 'https://mail.google.com/tasks/canvas';
+var VIEW_DEFAULT       = 'ig';
 
 function updateTask() {
   //chrome.browserAction.setBadgeBackgroundColor({color:[190, 190, 190, 255]});
