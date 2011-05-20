@@ -1,6 +1,6 @@
 {
 	"name":"Task Checker Plus for Google Tasks™",
-	"version":"2.0",
+	"version":"2.1",
 	"description": "Easy and fast access for the Google Task list",
 	"browser_action":{
 		"default_icon":"icon-19.png",
@@ -15,6 +15,8 @@
 	"background_page": "background.html",
 	"options_page": "options.html",
 	"permissions": [
-		"tabs","http://*/*","https://*/*","notifications"
+		"tabs",
+		"notifications",
+		"https://mail.google.com/"
 	]
 }

@@ -14,7 +14,7 @@ chrome.browserAction.onClicked.addListener(function(tab){
   var d_list       = localStorage.getItem('org.7kai.chrome.tasks.d_list')       || 0;
   var url          = URL_DEFAULT + view;
   if (apps_url.length > 0) {
-    url = 'http://mail.google.com/tasks/a/' + apps_url + '/' + view;
+    url = 'https://mail.google.com/tasks/a/' + apps_url + '/' + view;
   }
   if (d_list != 0) {
     url = url + '?listid=' + d_list;

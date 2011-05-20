@@ -30,11 +30,11 @@ function updateTask() {
   var apps_url     = localStorage.getItem('org.7kai.chrome.tasks.apps_url')     || APPS_URL_DEFAULT;
   var url = 'https://mail.google.com/tasks/ig';
   if (apps_url.length > 0) {
-    url = 'http://mail.google.com/tasks/a/' + apps_url + '/ig';
+    url = 'https://mail.google.com/tasks/a/' + apps_url + '/ig';
   }
   var d_url = 'https://mail.google.com/tasks/r/d';
   if (apps_url.length > 0) {
-    d_url = 'http://mail.google.com/tasks/a/' + apps_url + '/r/d';
+    d_url = 'https://mail.google.com/tasks/a/' + apps_url + '/r/d';
   }
   
   var countText = 0;
