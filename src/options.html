@@ -18,7 +18,7 @@ function restoreOptions() {
   var d_list       = localStorage.getItem('org.7kai.chrome.tasks.d_list')       || 0;
   var url = 'https://mail.google.com/tasks/' + view;
   if (apps_url.length > 0) {
-    url = 'http://mail.google.com/tasks/a/' + apps_url + '/' + view;
+    url = 'https://mail.google.com/tasks/a/' + apps_url + '/' + view;
   }
   $('input[name=display]').val([display]);
   $('input[name=width]').val(width);
@@ -45,6 +45,7 @@ function restoreOptions() {
       if (html.match(/_setup\((.*)\)\}/)) {
         var data = eval('(' + RegExp.$1 + ')');
         var dl = $('select[name=default_list]');
+        dl.empty();
         $.each(data.t.lists, function (i, list) {
           var option = $(document.createElement('option'));
           option.text(list.name);
@@ -92,6 +93,8 @@ function saveOptions() {
   }
   
   updateTask();
+  
+  restoreOptions();
 }
 </script>
 <style>
@@ -166,7 +169,7 @@ h3 {
 
 <div style="margin-top: 20px; padding-left: 20px;">
 <h2>Apps ( optional )</h2>
-<div>apps_url: <input type="text" name="apps_url" value="" size="24" /></div>
+<div>https://mail.google.com/tasks/a/<input type="text" name="apps_url" value="" size="24" />/ig</div>
 </div>
 
 <div style="margin-top: 20px; padding-left: 20px;">

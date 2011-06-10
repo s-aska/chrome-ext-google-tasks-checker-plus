@@ -1,6 +1,6 @@
 {
 	"name":"Task Checker Plus for Google Tasks™",
-	"version":"2.1",
+	"version":"2.4",
 	"description": "Easy and fast access for the Google Task list",
 	"browser_action":{
 		"default_icon":"icon-19.png",
